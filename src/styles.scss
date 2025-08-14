@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'sass:color';
+@import "bootstrap/scss/functions";
+@import "app/shared/tokens.scss";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/grid";
+// @import "app/shared/global";
+
+:root {
+    color-scheme: dark;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    // background: var(--bg);
+    background: white;
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: var(--step-0);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: auto;
+}
+
+.content-container {
+    padding: 1rem;
+    margin-inline: auto;
+}
+
+/* page background */
+.bg-blob {
+    position: fixed;
+    inset: -20vmax;
+    z-index: -1;
+    background:
+        // (size of the gradient ellipse at centre point of the gradient (60% from the left, 70% from the top), then duh, transparent = accent color in the center to fully transparent at the edges)
+        radial-gradient(40vmax 50vmax at 20% 15%, color.adjust($blush, $alpha: -0.1), transparent), // vmax is 1% larger than viewport
+        radial-gradient(55vmax 25vmax at 75% 20%, color.adjust($accent, $alpha: -0.5), transparent),
+        radial-gradient(70vmax 60vmax at 65% 75%, color.adjust($accent, $alpha: -0.55), transparent);
+    filter: blur(40px) saturate(1.1);
+}
+
+.theme-projects {
+    background: rgb(19, 1, 36);
+}
+
+.theme-projects .bg-blob {
+    background:
+        radial-gradient(30vmax 35vmax at 20% 20%, color.adjust($dark-accent2, $alpha: -0.7), transparent),
+        radial-gradient(35vmax 25vmax at 80% 20%, color.adjust($dark-accent2, $alpha: -0.8), transparent),
+        radial-gradient(50vmax 30vmax at 65% 75%, color.adjust($dark-accent, $alpha: -0.6), transparent);
+    filter: blur(40px) saturate(1.1);
+}
+
+/* Card & button styling */
+.card {
+    background: linear-gradient(180deg, color.mix(#fff, $surface, 2%), $surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.text-muted {
+    color: $accent-2 !important;
+}
+
+.bubble {
+    display: inline-grid;
+    place-items: center;
+    border-radius: var(--radius-xl);
+    background: radial-gradient(circle at 30% 20%,
+            color.adjust($blush, $lightness: -5%),
+            $primary );
+    color: #fff;
+    padding: 0.9rem 1.2rem;
+    font-weight: 600;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transform: translateZ(0);
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.bubble:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.bubble:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* clear focus rings */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 10px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: var(--accent);
+    --bs-btn-hover-border-color: var(--accent);
+    --bs-btn-focus-shadow-rgb: 255, 0, 128;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: var(--accent);
+    --bs-btn-active-border-color: var(--accent);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--accent-2);
+    --bs-btn-border-color: var(--accent-2);
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: var(--accent-2);
+    --bs-btn-hover-border-color: var(--accent-2);
+    --bs-btn-focus-shadow-rgb: 255, 0, 128;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: var(--accent-2);
+    --bs-btn-active-border-color: var(--accent-2);
+}

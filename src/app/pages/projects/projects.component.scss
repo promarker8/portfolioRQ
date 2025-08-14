@@ -1,0 +1,40 @@
+@import "../../shared/tokens.scss";
+
+.project-card {
+    background: rgba($accent, 0.05);
+    border-radius: 40px;
+    padding: 2.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+
+    img {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .project-title {
+        font-weight: bold;
+    }
+
+    .project-lead {
+        color: $accent-2 !important;
+        padding-left: 1px;
+    }
+
+    .project-description {
+        padding-left: 1px;
+    }
+}
+
+@media (min-width:1200px) {
+
+    .project-info {
+        padding-left: 30px;
+    }
+
+}
+
+.code {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.15rem 0.25rem;
+    white-space: nowrap;
+}

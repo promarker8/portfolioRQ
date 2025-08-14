@@ -1,0 +1,21 @@
+<header class="nav" [class.nav--elevated]="elevated()" [class.nav--open]="open()">
+    <div class="nav__inner">
+        <a routerLink="/" class="nav__brand" aria-label="Home">
+            <!-- <span class="dot"></span> -->
+            <span class="tile">reb</span><span class="thin">.dev</span>
+        </a>
+
+        <button class="nav__toggle" (click)="toggle()" [attr.aria-expanded]="open()" aria-controls="primary-nav">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+
+        <nav id="primary-nav" class="nav__links">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                Home
+            </a>
+            <a routerLink="/projects" routerLinkActive="active">Projects</a>
+            <a routerLink="/about" routerLinkActive="active">About</a>
+            <a routerLink="/contact" routerLinkActive="active">Contact</a>
+        </nav>
+    </div>
+</header>
