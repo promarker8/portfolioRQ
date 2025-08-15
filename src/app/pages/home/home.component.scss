@@ -1,0 +1,235 @@
+#homeContent {
+    height: 85vh;
+    opacity: 0;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.threejs-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.code-editor {
+    background: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+    min-width: 500px;
+    height: 500px;
+}
+
+.under-menu-bar {
+    display: flex;
+    min-width: 500px;
+    height: 470px;
+}
+
+.menu-bar {
+    display: flex;
+    align-items: center;
+    background: #333;
+    /* dark VS Code style */
+    color: #ccc;
+    font-size: 0.85rem;
+    height: 30px;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid #444;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-item {
+    margin-right: 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu-item:hover {
+    color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #252526;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 5px;
+    gap: .5rem;
+    width: 50px;
+}
+
+.sidebar .icon {
+    font-size: 1.3rem;
+    color: #ccc;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .icon:first-child {
+    border-left: 3px solid rgb(3, 141, 234);
+}
+
+/* Explorer */
+.explorer {
+    background: #1e1e1e;
+    width: 200px;
+    padding: 0.5rem;
+    border-right: 1px solid #333;
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.sub-folder {
+    padding-left: 11px;
+}
+
+.explorer-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: #9cdcfe;
+}
+
+.file {
+    // padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.file:hover,
+.folder:hover,
+.project:hover {
+    background: #2d2d2d;
+    cursor: pointer;
+}
+
+/* Editor main area */
+.editor-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title bar */
+.title-bar {
+    display: flex;
+    background: #2d2d2d;
+    font-size: 14px;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+/* Search bar */
+.search-bar input {
+    width: 250px;
+    border: .5px solid rgb(97, 97, 97);
+    border-radius: 6px;
+    background: #3c3c3c;
+    color: #fff;
+    text-align: center;
+}
+
+.icon-with-badge {
+    position: relative;
+    display: inline-block;
+}
+
+.icon-with-badge .badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-40%, 0%);
+    background-color: rgb(3, 141, 234);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.6rem;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.orange-text {
+    color: rgb(255, 98, 0);
+}
+
+.yellow-text {
+    color: rgb(255, 230, 0);
+}
+
+.blue-text {
+    color: rgb(43, 170, 255);
+}
+
+.pink-text {
+    color: rgb(255, 42, 99);
+}
+
+.disabled-vscode-text {
+    color: rgb(117, 117, 117);
+}
+
+/* Code area */
+.code-content {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: #d4d4d4;
+    white-space: pre-wrap;
+}
+
+/* Syntax highlighting */
+.keyword {
+    color: #569cd6;
+}
+
+.variable {
+    color: #9cdcfe;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.function {
+    color: #dcdcaa;
+}
+
+.built-in {
+    color: #4ec9b0;
+}
+
+.number {
+    color: #b5cea8;
+}
+
+.comment {
+    color: #6a9955;
+}

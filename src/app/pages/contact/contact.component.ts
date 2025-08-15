@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
+  ngOnInit() {
+    document.body.classList.add('theme-contact');
+  }
+  ngOnDestroy() {
+    document.body.classList.remove('theme-contact');
+  }
+
 }

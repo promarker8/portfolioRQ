@@ -4,7 +4,16 @@
     background: rgba($accent, 0.05);
     border-radius: 40px;
     padding: 2.5rem;
+    margin-bottom: 70px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
     img {
         width: 100%;
@@ -22,6 +31,10 @@
 
     .project-description {
         padding-left: 1px;
+    }
+
+    .rounded-pill:hover {
+        transform: translateX(90px);
     }
 }
 

@@ -1,3 +1,162 @@
-<div class="content-container">
-    <p>something</p>
+<div id="homeContent" class="content-container">
+    <div class="layout">
+
+        <!-- 3D Section -->
+        <div class="threejs-section">
+            <app-home3d-effect></app-home3d-effect>
+        </div>
+
+        <!-- Code Editor -->
+        <div class="code-editor me-xl-5">
+
+            <!-- Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item">File</div>
+                <div class="menu-item">Edit</div>
+                <div class="menu-item">Selection</div>
+                <div class="menu-item">View</div>
+                <div class="menu-item">Go</div>
+                <div class="menu-item">Run</div>
+                <div class="menu-item">Terminal</div>
+                <div class="menu-item">Help</div>
+
+                <!-- Search bar -->
+                <div class="search-bar">
+                    <input id="fake-search" type="text" placeholder="portfolioRQ" />
+                </div>
+            </div>
+
+            <div class="under-menu-bar">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="icon"><i class="bi bi-files"></i></div>
+                    <div class="icon"><i class="bi bi-search"></i></div>
+                    <div class="icon icon-with-badge">
+                        <i class="bi bi-bounding-box-circles"></i>
+                        <span class="badge">9</span>
+                    </div>
+                    <div class="icon"><i class="bi bi-google-play"></i></div>
+                    <div class="icon"><i class="bi bi-boxes"></i></div>
+                </div>
+
+                <!-- Explorer -->
+                <div class="explorer">
+
+                    <div class="explorer-title">EXPLORER</div>
+
+                    <!-- Project root -->
+                    <div class="explorer-item project">
+                        <i class="bi bi-caret-down pe-1"></i>
+                        <span class="name">PORTFOLIORQ</span>
+                    </div>
+
+                    <!-- inside main folder -->
+                    <div class="explorer-item sub-folder">
+                        <!-- Folder 1 -->
+                        <div class="explorer-item folder">
+                            <i class="bi bi-caret-right pe-1"></i>
+                            <span class="name">.angular</span>
+                        </div>
+                    </div>
+
+                    <div class="explorer-item sub-folder">
+                        <!-- Folder 1 -->
+                        <div class="explorer-item folder">
+                            <i class="bi bi-caret-right pe-1"></i>
+                            <span class="name">.vscode</span>
+                        </div>
+                    </div>
+
+                    <div class="explorer-item sub-folder">
+                        <!-- Folder 1 -->
+                        <div class="explorer-item folder">
+                            <i class="bi bi-caret-right pe-1"></i>
+                            <span class="name disabled-vscode-text ">.node_modules</span>
+                        </div>
+                    </div>
+
+                    <div class="explorer-item sub-folder">
+                        <!-- Folder 1 -->
+                        <div class="explorer-item folder">
+                            <i class="bi bi-caret-right pe-1"></i>
+                            <span class="name">public</span>
+                        </div>
+                    </div>
+
+                    <div class="explorer-item sub-folder">
+
+                        <!-- Folder 1 -->
+                        <div class="explorer-item folder">
+                            <i class="bi bi-caret-down pe-1"></i>
+                            <span class="name">src</span>
+                        </div>
+
+                        <div class="explorer-item sub-folder">
+
+                            <div class="explorer-item folder">
+                                <i class="bi bi-caret-right pe-1"></i>
+                                <span class="name">app</span>
+                            </div>
+
+                            <div class="explorer-item folder">
+                                <i class="bi bi-caret-right pe-1"></i>
+                                <span class="name">assets</span>
+                            </div>
+
+                            <!-- Files inside folder -->
+                            <div class="explorer-item file">
+                                <i class="bi bi-code pe-1 orange-text"></i>
+                                <span class="file-name">index.html</span>
+                            </div>
+                            <div class="explorer-item file">
+                                <i class="bi bi-file-earmark-minus pe-1 blue-text"></i>
+                                <span class="file-name">main.ts</span>
+                            </div>
+                            <div class="explorer-item file">
+                                <i class="bi bi-filetype-scss pe-1 pink-text"></i>
+                                <span class="file-name">styles.scss</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="explorer-item sub-folder file">
+                        <span class="pe-1 yellow-text">&#123; &#125;</span>
+                        <span class="file-name">angular.json</span>
+                    </div>
+
+                    <div class="explorer-item sub-folder file">
+                        <span class="pe-1 yellow-text">&#123; &#125;</span>
+                        <span class="file-name">package.json</span>
+                    </div>
+
+                    <div class="explorer-item sub-folder file">
+                        <i class="bi bi-info-circle pe-1 blue-text"></i>
+                        <span class="file-name">README.md</span>
+                    </div>
+
+                    <div class="explorer-item sub-folder file">
+                        <span class="pe-1 yellow-text">&#123; &#125;</span>
+                        <span class="file-name">tsconfig.app.json</span>
+                    </div>
+
+                </div>
+
+                <!-- Main editor area -->
+                <div class="editor-main">
+                    <!-- Title bar -->
+                    <div class="title-bar">
+                        <div class="tab active">main.ts</div>
+                        <div class="tab">app.component.html</div>
+                    </div>
+
+                    <!-- Code content -->
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 </div>

@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+  ngOnInit() {
+    document.body.classList.add('theme-about');
+  }
+  ngOnDestroy() {
+    document.body.classList.remove('theme-about');
+  }
+
 }
