@@ -6,14 +6,16 @@
 .layout {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-    padding-bottom: 40px;
+    // padding-bottom: 40px;
 }
 
 .threejs-section {
     flex: 1;
     min-width: 300px;
+    max-width: 600px;
 }
 
 .code-editor {
@@ -21,13 +23,13 @@
     border-radius: 8px;
     overflow: hidden;
     flex: 1;
-    min-width: 500px;
+    min-width: 800px;
     height: 500px;
 }
 
 .under-menu-bar {
     display: flex;
-    min-width: 500px;
+    min-width: 600px;
     height: 470px;
 }
 
@@ -232,4 +234,24 @@
 
 .comment {
     color: #6a9955;
+}
+
+@media (max-width: 900px) {
+    .code-editor {
+        min-width: 500px;
+    }
+
+    .explorer {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .code-editor {
+        min-width: 300px;
+    }
+
+    .explorer {
+        display: none;
+    }
 }

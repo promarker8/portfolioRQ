@@ -50,7 +50,7 @@ export class Home3dEffectComponent implements AfterViewInit {
     this.renderer.setSize(width, height);
     this.canvasContainer.nativeElement.appendChild(this.renderer.domElement);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, .8);
     this.scene.add(ambientLight);
 
     const pointLight = new THREE.PointLight(0xffffff, 1);
