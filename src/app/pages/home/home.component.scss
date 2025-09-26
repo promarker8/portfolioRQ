@@ -19,36 +19,156 @@
 }
 
 .code-editor {
-    background: #1e1e1e;
+    background: #2b2b2b;
     border-radius: 8px;
     overflow: hidden;
     flex: 1;
     min-width: 800px;
-    height: 500px;
+    max-width: 1300px;
+    // height: 500px;
+    height: 70vh;
 }
+
+
+
+
+// .code-editor-wrapper {
+//     position: relative;
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-start;
+//     padding: 60px;
+//     box-sizing: border-box;
+//     z-index: 0;
+
+//     width: 100%;
+//     height: 100%; // Fill parent (likely 85vh from #homeContent)
+//     max-height: 100%;
+//     min-height: 100%;
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         inset: 0;
+//         background-image: url('../../../assets/desktop2.png');
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         background-position: top center;
+//         z-index: -1;
+//         border-radius: 2px;
+//     }
+
+//     .code-editor {
+//         z-index: 1;
+//         position: relative;
+//         border-radius: 8px;
+//         background: #2b2b2b;
+//         overflow: hidden;
+//         min-width: 700px;
+//         max-width: 1300px;
+//         width: 100%;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+// .code-editor-wrapper {
+//     position: relative;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 60px;
+//     box-sizing: border-box;
+//     z-index: 0;
+//     min-width: 800px;
+//     max-width: 2000px;
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         inset: 0;
+//         background-image: url('../../../assets/chaser.png');
+//         background-size: cover;
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         z-index: -1;
+//         border-radius: 2px;
+//     }
+
+//     .code-editor {
+//         z-index: 1;
+//         position: relative;
+//         border-radius: 8px;
+//         background: #2b2b2b;
+//         overflow: hidden;
+//         min-width: 700px;
+//         max-width: 1300px;
+//     }
+// }
+
+
+
+
+// .code-editor {
+//     position: relative;
+//     background: #1e1e1e;
+//     border-radius: 8px;
+//     overflow: hidden;
+//     flex: 1;
+//     min-width: 800px;
+//     max-width: 1300px;
+//     height: 70vh;
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         inset: 0;
+//         background-image: url('../../../assets/chaser.png');
+//         background-size: cover;
+//         background-position: center;
+//         opacity: 0.15;
+//         z-index: 0;
+//     }
+
+//     >* {
+//         position: relative;
+//         z-index: 10; // bring the content above the image
+//     }
+// }
+
 
 .under-menu-bar {
     display: flex;
     min-width: 600px;
-    height: 470px;
+    height: 95%;
 }
 
 .menu-bar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: #333;
     /* dark VS Code style */
     color: #ccc;
     font-size: 0.85rem;
-    height: 30px;
+    height: 35px;
     padding: 0 0.5rem;
     border-bottom: 1px solid #444;
     width: 100%;
     box-sizing: border-box;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .menu-item {
-    margin-right: 1rem;
+    // margin-right: 1rem;
     cursor: pointer;
     user-select: none;
 }
@@ -63,10 +183,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-    padding-top: 5px;
+    justify-content: space-between;
+    padding: 5px 0;
+    width: 50px;
+    border-bottom-left-radius: 8px;
+}
+
+.bi-files {
+    padding-right: 4px;
+}
+
+.sidebar-top {
     gap: .5rem;
     width: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar .icon {
@@ -86,7 +217,8 @@
 /* Explorer */
 .explorer {
     background: #1e1e1e;
-    width: 200px;
+    width: 230px;
+    min-width: 230px;
     padding: 0.5rem;
     border-right: 1px solid #333;
     color: #ccc;
@@ -96,7 +228,7 @@
 }
 
 .sub-folder {
-    padding-left: 11px;
+    padding-left: 10px;
 }
 
 .explorer-title {
@@ -110,6 +242,7 @@
     // padding: 0.25rem 0.5rem;
     border-radius: 3px;
     cursor: pointer;
+    padding-left: 4px;
 }
 
 .file:hover,
@@ -124,23 +257,28 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow-x: auto;
+    min-width: 850px;
 }
 
 /* Title bar */
 .title-bar {
     display: flex;
-    background: #2d2d2d;
+    background: #1e1e1e;
     font-size: 14px;
 }
 
 .tab {
     padding: 0.5rem 1rem;
+    background: #1e1e1e;
     color: #ccc;
     cursor: pointer;
+    // border-left: 1px solid rgb(149, 149, 149);
+    border-right: 1px solid rgb(52, 52, 52);
 }
 
 .tab.active {
-    background: #1e1e1e;
+    background: #2b2b2b;
     color: #fff;
 }
 
@@ -192,6 +330,10 @@
     color: rgb(255, 42, 99);
 }
 
+.purple-text {
+    color: rgb(151 97 215);
+}
+
 .disabled-vscode-text {
     color: rgb(117, 117, 117);
 }
@@ -205,6 +347,37 @@
     font-size: 0.9rem;
     color: #d4d4d4;
     white-space: pre-wrap;
+    word-break: break-word;
+
+    .code-line-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .line-numbers {
+        text-align: right;
+        user-select: none;
+        padding-right: 1rem;
+        color: rgb(117, 117, 117);
+        min-width: 2rem;
+        line-height: 1.5;
+    }
+
+    .line-numbers span {
+        display: block;
+    }
+
+    pre {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    code {
+        width: 100%;
+    }
 }
 
 /* Syntax highlighting */
@@ -236,6 +409,99 @@
     color: #6a9955;
 }
 
+
+.run-button {
+    // margin-top: 1rem;
+    padding: 3px 12px;
+    background-color: #007acc;
+    border: none;
+    color: white;
+    // font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: #005fa3;
+    }
+
+    &:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+.fake-terminal {
+    // margin: 0 0 1rem 0;
+    background: #1e1e1e;
+    border-top: 1px solid #333;
+    // padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: #d4d4d4;
+    position: absolute;
+    width: fit-content;
+    bottom: 0;
+    animation: fadeIn 0.2s ease-in-out;
+
+    .terminal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // background: #333;
+        padding: 4px 8px;
+        font-size: 0.8rem;
+        border-bottom: 1px solid #161616;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+
+    }
+
+    .terminal-title {
+        color: #ababab;
+        cursor: pointer;
+
+        &:hover {
+            color: #e2e2e2;
+        }
+
+    }
+
+    .terminal-title.chosen {
+        text-decoration: underline 1px #007acc;
+        text-underline-offset: 4px;
+    }
+
+    .terminal-close {
+        cursor: pointer;
+        color: #ce1f1f;
+        font-size: 1.1rem;
+        font-weight: bold;
+        user-select: none;
+    }
+
+    .terminal-body {
+        padding: 1.5rem 0 1.1rem 0.7rem;
+        // white-space: pre-wrap;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 @media (max-width: 900px) {
     .code-editor {
         min-width: 500px;
@@ -244,6 +510,10 @@
     .explorer {
         display: none;
     }
+
+    // .fake-terminal {
+    //     width: 93%;
+    // }
 }
 
 @media (max-width: 650px) {

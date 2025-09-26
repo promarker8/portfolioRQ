@@ -33,9 +33,37 @@
         padding-left: 1px;
     }
 
-    .rounded-pill:hover {
-        transform: translateX(90px);
+    .additional-screenshots {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+
+        .additional-img {
+            height: 150px;
+            width: 215px;
+            // width: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        p {
+            font-size: 14px;
+            color: rgb(155, 155, 155);
+            margin: 5px 0;
+        }
     }
+
+    // .rounded-pill:hover {
+    //     transform: translateX(90px);
+    // }
 }
 
 @media (min-width:1200px) {

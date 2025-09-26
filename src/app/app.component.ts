@@ -42,13 +42,13 @@ export class AppComponent implements AfterViewInit {
           if (window.getComputedStyle(overlayEl).display !== 'none') {
 
             tl.set(overlayEl, { opacity: 1 })
-              .fromTo(revealLineEl, { scale: 0 }, { scale: 1, duration: 0.3, ease: 'back.out(1.7)' })
-              .to(revealLineEl, { width: '100%', borderRadius: '2px', duration: 0.4, ease: 'power2.inOut' })
+              .fromTo(revealLineEl, { scale: 0 }, { scale: 1, duration: 0.2, ease: 'back.out(1.7)' })
+              .to(revealLineEl, { width: '100%', borderRadius: '2px', duration: 0.2, ease: 'power2.inOut' })
               .set(overlayEl, { backgroundImage: 'none' })
               .to(revealLineEl, {
                 scaleY: 100,
                 transformOrigin: 'center center',
-                duration: 0.7,
+                duration: 0.6,
                 ease: 'power4.inOut',
                 onComplete: () => {
                   gsap.set(overlayEl, { display: 'none' });

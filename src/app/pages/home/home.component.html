@@ -2,159 +2,343 @@
     <div class="layout">
 
         <!-- 3D Section -->
-        <div class="threejs-section">
+        <!-- <div class="threejs-section">
             <app-home3d-effect></app-home3d-effect>
-        </div>
+        </div> -->
 
         <!-- Code Editor -->
-        <div class="code-editor me-xl-5">
+        <div class="code-editor-wrapper">
+            <div class="code-editor">
 
-            <!-- Menu Bar -->
-            <div class="menu-bar">
-                <div class="menu-item">File</div>
-                <div class="menu-item">Edit</div>
-                <div class="menu-item">Selection</div>
-                <div class="menu-item">View</div>
-                <div class="menu-item">Go</div>
-                <div class="menu-item">Run</div>
-                <div class="menu-item">Terminal</div>
-                <div class="menu-item">Help</div>
-
-                <!-- Search bar -->
-                <div class="search-bar">
-                    <input id="fake-search" type="text" placeholder="portfolioRQ" />
-                </div>
-            </div>
-
-            <div class="under-menu-bar">
-                <!-- Sidebar -->
-                <div class="sidebar">
-                    <div class="icon"><i class="bi bi-files"></i></div>
-                    <div class="icon"><i class="bi bi-search"></i></div>
-                    <div class="icon icon-with-badge">
-                        <i class="bi bi-bounding-box-circles"></i>
-                        <span class="badge">9</span>
+                <!-- Menu Bar -->
+                <div class="menu-bar">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="menu-item">
+                            <img src="assets/vs_logo.svg" alt="logo" width="19" height="19">
+                        </div>
+                        <div class="menu-item">File</div>
+                        <div class="menu-item">Edit</div>
+                        <div class="menu-item">Selection</div>
+                        <div class="menu-item">View</div>
+                        <div class="menu-item">Go</div>
+                        <div class="menu-item">Run</div>
+                        <div class="menu-item">Terminal</div>
+                        <div class="menu-item">Help</div>
                     </div>
-                    <div class="icon"><i class="bi bi-google-play"></i></div>
-                    <div class="icon"><i class="bi bi-boxes"></i></div>
+
+                    <!-- Search bar -->
+                    <div class="search-bar">
+                        <input id="fake-search" type="text" placeholder="portfolioRQ" />
+                    </div>
+
+                    <div class="menu-item">
+                        <button class="run-button" (click)="showTerminal()" [disabled]="runButtonDisabled">Run</button>
+                    </div>
                 </div>
 
-                <!-- Explorer -->
-                <div class="explorer">
-
-                    <div class="explorer-title">EXPLORER</div>
-
-                    <!-- Project root -->
-                    <div class="explorer-item project">
-                        <i class="bi bi-caret-down pe-1"></i>
-                        <span class="name">PORTFOLIORQ</span>
-                    </div>
-
-                    <!-- inside main folder -->
-                    <div class="explorer-item sub-folder">
-                        <!-- Folder 1 -->
-                        <div class="explorer-item folder">
-                            <i class="bi bi-caret-right pe-1"></i>
-                            <span class="name">.angular</span>
+                <div class="under-menu-bar">
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <div class="sidebar-top">
+                            <div class="icon" (click)="toggleSidebar()"><i class="bi bi-files"></i></div>
+                            <div class="icon"><i class="bi bi-search"></i></div>
+                            <div class="icon icon-with-badge">
+                                <i class="bi bi-bounding-box-circles"></i>
+                                <span class="badge">9</span>
+                            </div>
+                            <div class="icon"><i class="bi bi-google-play"></i></div>
+                            <div class="icon"><i class="bi bi-boxes"></i></div>
+                        </div>
+                        <div class="sidebar-bottom">
+                            <i class="bi bi-gear"></i>
                         </div>
                     </div>
 
-                    <div class="explorer-item sub-folder">
-                        <!-- Folder 1 -->
-                        <div class="explorer-item folder">
-                            <i class="bi bi-caret-right pe-1"></i>
-                            <span class="name">.vscode</span>
-                        </div>
-                    </div>
+                    <!-- Explorer -->
+                    <div id="explorer" class="explorer">
 
-                    <div class="explorer-item sub-folder">
-                        <!-- Folder 1 -->
-                        <div class="explorer-item folder">
-                            <i class="bi bi-caret-right pe-1"></i>
-                            <span class="name disabled-vscode-text ">.node_modules</span>
-                        </div>
-                    </div>
+                        <div class="explorer-title">EXPLORER</div>
 
-                    <div class="explorer-item sub-folder">
-                        <!-- Folder 1 -->
-                        <div class="explorer-item folder">
-                            <i class="bi bi-caret-right pe-1"></i>
-                            <span class="name">public</span>
-                        </div>
-                    </div>
-
-                    <div class="explorer-item sub-folder">
-
-                        <!-- Folder 1 -->
-                        <div class="explorer-item folder">
-                            <i class="bi bi-caret-down pe-1"></i>
-                            <span class="name">src</span>
+                        <!-- Project root -->
+                        <div class="explorer-item project" (click)="toggleFolder('main')">
+                            <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['main'],
+                            'bi-caret-right': !openFolders['main']
+                        }"></i>
+                            <span class="name">PORTFOLIORQ</span>
                         </div>
 
-                        <div class="explorer-item sub-folder">
-
-                            <div class="explorer-item folder">
-                                <i class="bi bi-caret-right pe-1"></i>
-                                <span class="name">app</span>
+                        <!-- inside main folder -->
+                        <div *ngIf="openFolders['main']" class="explorer-item sub-folder">
+                            <div class="explorer-item folder" (click)="toggleFolder('angular')">
+                                <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['angular'],
+                            'bi-caret-right': !openFolders['angular']
+                        }"></i>
+                                <span class="name">.angular</span>
                             </div>
 
-                            <div class="explorer-item folder">
-                                <i class="bi bi-caret-right pe-1"></i>
-                                <span class="name">assets</span>
-                            </div>
-
-                            <!-- Files inside folder -->
-                            <div class="explorer-item file">
-                                <i class="bi bi-code pe-1 orange-text"></i>
-                                <span class="file-name">index.html</span>
-                            </div>
-                            <div class="explorer-item file">
-                                <i class="bi bi-file-earmark-minus pe-1 blue-text"></i>
-                                <span class="file-name">main.ts</span>
-                            </div>
-                            <div class="explorer-item file">
-                                <i class="bi bi-filetype-scss pe-1 pink-text"></i>
-                                <span class="file-name">styles.scss</span>
+                            <div *ngIf="openFolders['angular']" class="explorer-item sub-folder">
+                                <div class="explorer-item file ps-1">
+                                    <span class="file-name disabled-vscode-text">angular-webpack</span>
+                                </div>
                             </div>
 
                         </div>
 
+
+                        <div *ngIf="openFolders['main']" class="explorer-item sub-folder">
+                            <!-- Folder 1 -->
+                            <div class="explorer-item folder" (click)="toggleFolder('vs')">
+                                <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['vs'],
+                            'bi-caret-right': !openFolders['vs']
+                        }"></i> <span class="name">.vscode</span>
+                            </div>
+
+                            <div *ngIf="openFolders['vs']" class="explorer-item sub-folder">
+                                <div class="explorer-item file">
+                                    <span class="pe-1 yellow-text">&#123; &#125;</span>
+                                    <span class="file-name">extensions.json</span>
+                                </div>
+                            </div>
+
+                            <div *ngIf="openFolders['vs']" class="explorer-item sub-folder">
+                                <div class="explorer-item file">
+                                    <span class="pe-1 yellow-text">&#123; &#125;</span>
+                                    <span class="file-name">launch.json</span>
+                                </div>
+                            </div>
+
+                            <div *ngIf="openFolders['vs']" class="explorer-item sub-folder">
+                                <div class="explorer-item file">
+                                    <span class="pe-1 yellow-text">&#123; &#125;</span>
+                                    <span class="file-name">tasks.json</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div *ngIf="openFolders['main']" class="explorer-item sub-folder">
+                            <!-- Folder 1 -->
+                            <div class="explorer-item folder" (click)="toggleFolder('node')">
+                                <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['node'],
+                            'bi-caret-right': !openFolders['node']
+                            }"></i>
+                                <span class="name disabled-vscode-text">.node_modules</span>
+                            </div>
+
+                            <div *ngIf="openFolders['node']" class="explorer-item sub-folder">
+                                <div class="explorer-item file ps-1">
+                                    <span class="file-name disabled-vscode-text">.bin</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div *ngIf="openFolders['main']" class="explorer-item sub-folder">
+                            <!-- Folder 1 -->
+                            <div class="explorer-item folder" (click)="toggleFolder('public')">
+                                <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['public'],
+                            'bi-caret-right': !openFolders['public']
+                            }"></i>
+                                <span class="name">public</span>
+                            </div>
+
+
+                            <div *ngIf="openFolders['public']" class="explorer-item sub-folder">
+                                <div class="explorer-item file">
+                                    <i class="bi bi-star-fill pe-1 yellow-text"></i>
+                                    <span class="file-name">favicon.ico</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="openFolders['main']" class="explorer-item sub-folder">
+
+                            <!-- Folder 1 -->
+                            <div class="explorer-item folder" (click)="toggleFolder('src')">
+                                <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['src'],
+                            'bi-caret-right': !openFolders['src']
+                            }"></i>
+                                <span class="name">src</span>
+                            </div>
+
+                            <div *ngIf="openFolders['src']" class="explorer-item sub-folder">
+
+                                <div class="explorer-item folder" (click)="toggleFolder('app')">
+                                    <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['app'],
+                            'bi-caret-right': !openFolders['app']
+                            }"></i>
+                                    <span class="name">app</span>
+                                </div>
+
+
+                                <div *ngIf="openFolders['app']" class="explorer-item sub-folder">
+                                    <div class="explorer-item file">
+                                        <i class="bi bi-code pe-1 orange-text"></i>
+                                        <span class="file-name">app.component.html</span>
+                                    </div>
+                                    <div class="explorer-item file">
+                                        <i class="bi bi-file-earmark-minus pe-1 blue-text"></i>
+                                        <span class="file-name">app.component.ts</span>
+                                    </div>
+                                    <div class="explorer-item file">
+                                        <i class="bi bi-filetype-scss pe-1 pink-text"></i>
+                                        <span class="file-name">app.component.scss</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div *ngIf="openFolders['src']" class="explorer-item sub-folder">
+
+                                <div class="explorer-item folder" (click)="toggleFolder('assets')">
+                                    <i class="bi pe-1" [ngClass]="{
+                            'bi-caret-down': openFolders['assets'],
+                            'bi-caret-right': !openFolders['assets']
+                            }"></i>
+                                    <span class="name">assets</span>
+                                </div>
+
+                                <div *ngIf="openFolders['assets']" class="explorer-item sub-folder">
+                                    <div class="explorer-item file">
+                                        <i class="bi bi-images pe-1 purple-text"></i>
+                                        <span class="file-name">logo.png</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div *ngIf="openFolders['src']" class="explorer-item sub-folder">
+
+                                <!-- Files inside folder -->
+                                <div class="explorer-item file">
+                                    <i class="bi bi-code pe-1 orange-text"></i>
+                                    <span class="file-name">index.html</span>
+                                </div>
+                                <div class="explorer-item file">
+                                    <i class="bi bi-file-earmark-minus pe-1 blue-text"></i>
+                                    <span class="file-name">main.ts</span>
+                                </div>
+                                <div class="explorer-item file">
+                                    <i class="bi bi-filetype-scss pe-1 pink-text"></i>
+                                    <span class="file-name">styles.scss</span>
+                                </div>
+
+                                <div class="explorer-item sub-folder file">
+                                    <span class="pe-1 yellow-text">&#123; &#125;</span>
+                                    <span class="file-name">angular.json</span>
+                                </div>
+
+                                <div class="explorer-item sub-folder file">
+                                    <span class="pe-1 yellow-text">&#123; &#125;</span>
+                                    <span class="file-name">package.json</span>
+                                </div>
+
+                                <div class="explorer-item sub-folder file">
+                                    <i class="bi bi-info-circle pe-1 blue-text"></i>
+                                    <span class="file-name">README.md</span>
+                                </div>
+
+                                <div class="explorer-item sub-folder file">
+                                    <span class="pe-1 yellow-text">&#123; &#125;</span>
+                                    <span class="file-name">tsconfig.app.json</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="explorer-item sub-folder file">
-                        <span class="pe-1 yellow-text">&#123; &#125;</span>
-                        <span class="file-name">angular.json</span>
-                    </div>
+                    <!-- Main editor area -->
+                    <div class="editor-main">
+                        <!-- Title bar -->
+                        <div class="title-bar">
+                            <div id="tab1" class="tab active" (click)="toggleTabs('tab1', 'tab2')">main.ts</div>
+                            <div id="tab2" class="tab" (click)="toggleTabs('tab2', 'tab1')">app.component.html</div>
+                        </div>
 
-                    <div class="explorer-item sub-folder file">
-                        <span class="pe-1 yellow-text">&#123; &#125;</span>
-                        <span class="file-name">package.json</span>
-                    </div>
+                        <!-- Code content -->
+                        <!-- <div class="code-content">
+                        <pre><code>
+                        <span class="comment">// Hi there!</span>
+                        <span class="keyword">const</span> <span class="variable">intro</span> <span class="operator">=</span> <span class="string">"I'm a creative front-end developer who builds slick UIs and interactive experiences."</span>;
+                        <span class="function">console</span>.log(intro);
+                        </code></pre>
+                    </div> -->
 
-                    <div class="explorer-item sub-folder file">
-                        <i class="bi bi-info-circle pe-1 blue-text"></i>
-                        <span class="file-name">README.md</span>
-                    </div>
+                        <div class="code-content">
+                            <div *ngIf="activeTab === 'tab1'" class="code-line-wrapper">
+                                <div class="line-numbers">
+                                    <span *ngFor="let line of lines">{{ line }}</span>
+                                </div>
+                                <!-- <pre><code id="codeIntro"></code></pre> -->
+                                <div class="d-flex flex-column w-100">
+                                    <!-- <pre><code id="codeStatic"><span class="comment">// Hi there!</span>
+<span class="keyword">const</span> <span class="variable">name</span> = <span class="string">"Rebecca"</span>;
+<span class="keyword">const</span> <span class="variable">role</span> = <span class="string">"Software Engineer"</span>;
+<span class="keyword">const</span> <span class="variable">focus</span> = <span class="string">"Front-end development"</span>;
+<span class="keyword">const</span> <span class="variable">location</span> = <span class="string">"Dublin, Ireland"</span>;
+<span class="keyword">const</span> <span class="variable">education</span> = <span class="string">"Master’s in Computer Science from UCD"</span>;
+<span class="keyword">const</span> <span class="variable">hobbies</span> = <span class="string">["hiking", "singing", "playful design", "game development"]</span>;
+<span class="keyword">const</span> <span class="variable">personality</span> = <span class="string">"colorful, creative, detail-obsessed"</span>;
+</code>
+</pre> -->
 
-                    <div class="explorer-item sub-folder file">
-                        <span class="pe-1 yellow-text">&#123; &#125;</span>
-                        <span class="file-name">tsconfig.app.json</span>
+                                    <pre><code id="codeAnimated"></code></pre>
+                                </div>
+                            </div>
+
+                            <div *ngIf="activeTab === 'tab2'" class="code-line-wrapper">
+                                <div class="line-numbers">
+                                    <span *ngFor="let line of lines">{{ line }}</span>
+                                </div>
+                                <pre><code><span class="comment">&lt;!-- sample HTML --&gt;</span>
+<span class="keyword">&lt;h1&gt;</span>Welcome to app.component.html<span class="keyword">&lt;/h1&gt;</span></code></pre>
+                            </div>
+
+                        </div>
+
+                        <!-- Fake Terminal -->
+                        <div class="fake-terminal" *ngIf="terminalVisible">
+                            <div class="terminal-header">
+                                <div class="d-flex align-items-center gap-4">
+                                    <div class="terminal-title">PROBLEMS</div>
+                                    <div class="terminal-title chosen">OUTPUT</div>
+                                    <div class="terminal-title">DEBUG CONSOLE</div>
+                                    <div class="terminal-title">TERMINAL</div>
+                                    <div class="terminal-title">PORTS</div>
+                                </div>
+                                <span class="terminal-close" (click)="hideTerminal()">×</span>
+                            </div>
+                            <div *ngIf="activeTab === 'tab1'" class="terminal-body">
+                                Hi! I'm Rebecca, and I am currently working as a Software Engineer based in Dublin,
+                                Ireland.<br />
+                                My main interest at the moment is Front-end development, and much of my work revolves
+                                around
+                                developing those skills.<br />
+                                I hold a Master’s in Computer Science from UCD,
+                                and love weaving playful design into my personal projects.<br />
+                                Lately, I’ve been dipping my toes into game dev experiments, exploring how design and
+                                code
+                                can work together in small creative experiments.<br />
+                                Have a look around the projects I have undertaken, and feel free to get in contact!
+                            </div>
+                            <div *ngIf="activeTab !== 'tab1'" class="terminal-body">
+                                <div class="py-5"></div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
-
-                <!-- Main editor area -->
-                <div class="editor-main">
-                    <!-- Title bar -->
-                    <div class="title-bar">
-                        <div class="tab active">main.ts</div>
-                        <div class="tab">app.component.html</div>
-                    </div>
-
-                    <!-- Code content -->
-
-                </div>
-
             </div>
         </div>
 

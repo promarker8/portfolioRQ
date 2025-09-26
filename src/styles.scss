@@ -16,6 +16,7 @@
 html,
 body {
     height: 100%;
+    min-width: 320px;
 }
 
 body {
@@ -159,4 +160,47 @@ html {
     --bs-btn-active-color: #000;
     --bs-btn-active-bg: var(--accent-2);
     --bs-btn-active-border-color: var(--accent-2);
+}
+
+.keyword {
+    color: #569cd6;
+}
+
+.variable {
+    color: #9cdcfe;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.function {
+    color: #dcdcaa;
+}
+
+.built-in {
+    color: #4ec9b0;
+}
+
+.number {
+    color: #b5cea8;
+}
+
+.comment {
+    color: #6a9955;
+}
+
+.square-bracket {
+    color: rgb(228 196 71);
+}
+
+.code-content {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: #d4d4d4;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
