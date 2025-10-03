@@ -1,0 +1,26 @@
+// .container-fluid {
+//     position: relative;
+//     width: 100%;
+//     height: 90vh;
+//     overflow: hidden;
+// }
+
+// .plane {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     /* Adjust for exact centering */
+// }
+
+.container-fluid {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+#plane {
+    // transform: rotate(-12deg) !important;
+    transform-origin: center;
+    cursor: pointer;
+}

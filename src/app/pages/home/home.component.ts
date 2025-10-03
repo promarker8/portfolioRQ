@@ -105,7 +105,7 @@ export class HomeComponent {
         this.runButtonDisabled = false;
       }
     })
-      .pause(2000)
+      .pause(800)
       .type(
         '<span class="function">printWelcome</span><span class="keyword">() {</span>'
       )

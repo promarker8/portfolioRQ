@@ -180,7 +180,7 @@
 
 
                                 <div *ngIf="openFolders['app']" class="explorer-item sub-folder">
-                                    <div class="explorer-item file">
+                                    <div class="explorer-item file" (click)="toggleTabs('tab2', 'tab1')">
                                         <i class="bi bi-code pe-1 orange-text"></i>
                                         <span class="file-name">app.component.html</span>
                                     </div>
@@ -222,7 +222,7 @@
                                     <i class="bi bi-code pe-1 orange-text"></i>
                                     <span class="file-name">index.html</span>
                                 </div>
-                                <div class="explorer-item file">
+                                <div class="explorer-item file" (click)="toggleTabs('tab1', 'tab2')">
                                     <i class="bi bi-file-earmark-minus pe-1 blue-text"></i>
                                     <span class="file-name">main.ts</span>
                                 </div>
@@ -326,9 +326,8 @@
                                 developing those skills.<br />
                                 I hold a Master’s in Computer Science from UCD,
                                 and love weaving playful design into my personal projects.<br />
-                                Lately, I’ve been dipping my toes into game dev experiments, exploring how design and
-                                code
-                                can work together in small creative experiments.<br />
+                                Lately, I’ve been dipping my toes into game dev experiments,<br />
+                                exploring how design and code can work together in small creative experiments.<br />
                                 Have a look around the projects I have undertaken, and feel free to get in contact!
                             </div>
                             <div *ngIf="activeTab !== 'tab1'" class="terminal-body">
