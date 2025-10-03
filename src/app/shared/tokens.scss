@@ -61,6 +61,32 @@ $step-3: clamp(2.2rem, 1.6rem + 3vw, 3rem);
     --step-1: #{$step-1};
     --step-2: #{$step-2};
     --step-3: #{$step-3};
+
+    --check-color-1: #{$blush};
+    --check-color-2: #{$primary};
+}
+
+.theme-home {
+    --check-color-1: #{$blush}; // Pink
+    --check-color-2: #{$accent}; // Red
+}
+
+// Projects
+.theme-projects {
+    --check-color-1: #{$dark-accent2}; // Dark purple
+    --check-color-2: #{$dark-accent}; // Dark pink
+}
+
+// About
+.theme-about {
+    --check-color-1: #{$dark-accent}; // Orange/yellow
+    --check-color-2: #{$blush}; // Pink
+}
+
+// Contact
+.theme-contact {
+    --check-color-1: #{$blue-accent}; // Light blue
+    --check-color-2: #{$green-accent}; // Light green
 }
 
 // Optional light theme override
