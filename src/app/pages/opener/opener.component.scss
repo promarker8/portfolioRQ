@@ -24,3 +24,16 @@
     transform-origin: center;
     cursor: pointer;
 }
+
+#person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#personSvg {
+    flex-shrink: 0;
+    width: 600px;
+    max-width: 90vw;
+}
