@@ -59,12 +59,17 @@ export class OpenerComponent implements AfterViewInit, OnDestroy {
       face: native.querySelector('.face'),
       eye: native.querySelectorAll('.eye'),
       innerFace: native.querySelector('.inner-face'),
-      hairFront: native.querySelector('.hair-front'),
+      hairFrontLeft: native.querySelector('.hair-front-left'),
+      hairFrontRight: native.querySelector('.hair-front-right'),
       hairBack: native.querySelector('.hair-back'),
       shadow: native.querySelectorAll('.shadow'),
       ear: native.querySelectorAll('.ear'),
       eyebrowLeft: native.querySelector('.eyebrow-left'),
-      eyebrowRight: native.querySelector('.eyebrow-right')
+      eyebrowRight: native.querySelector('.eyebrow-right'),
+      blush: native.querySelectorAll('.blush-left, .blush-right'),
+      necklace: native.querySelector('.necklace'),
+      noseRing: native.querySelector('.nose'),
+      septum: native.querySelector('.septum')
     };
   }
 
@@ -123,7 +128,7 @@ export class OpenerComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupBlink() {
-    this.blink = gsap.timeline({ repeat: -1, repeatDelay: 5, paused: true });
+    this.blink = gsap.timeline({ repeat: -1, repeatDelay: 4, paused: true });
 
     this.blink
       .to('.eye-right, .eye-left', { duration: 0.01, opacity: 0 }, 0)

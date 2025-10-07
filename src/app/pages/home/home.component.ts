@@ -2,11 +2,12 @@ import { Component, HostListener } from '@angular/core';
 import { Home3dEffectComponent } from "../../components/home3d-effect/home3d-effect.component";
 import { CommonModule } from '@angular/common';
 import TypeIt from 'typeit';
+import { OpenerComponent } from '../opener/opener.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Home3dEffectComponent, CommonModule],
+  imports: [Home3dEffectComponent, CommonModule, OpenerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -111,11 +112,19 @@ export class HomeComponent {
       )
       .break()
       .type(
-        '   <span class="keyword">console</span><span class="function">.log</span>(<span class="string">`Hi! I\'m <span class="keyword">${</span><span class="variable">name</span><span class="keyword">}</span>, and I am currently working as a <span class="keyword">${</span><span class="variable">role</span><span class="keyword">}</span> based in <span class="keyword">${</span><span class="variable">location</span><span class="keyword">}</span>.</span>'
+        '   <span class="keyword">console</span><span class="function">.log</span>(<span class="string">`Hi! I\'m <span class="keyword">${</span><span class="variable">name</span><span class="keyword">}</span>,</span>'
       )
       .break()
       .type(
-        '   <span class="string">My main interest at the moment is <span class="keyword">${</span><span class="variable">focus</span><span class="keyword">}</span>, and much of my work revolves around developing those skills.`</span>'
+        '   <span class="string">and I am currently working as a <span class="keyword">${</span><span class="variable">role</span><span class="keyword">}</span> based in <span class="keyword">${</span><span class="variable">location</span><span class="keyword">}</span>.</span>'
+      )
+      .break()
+      .type(
+        '   <span class="string">My main interest at the moment is <span class="keyword">${</span><span class="variable">focus</span><span class="keyword">}</span></span>'
+      )
+      .break()
+      .type(
+        '   <span class="string">and much of my work revolves around developing those skills.</span>'
       )
       .break()
       .type(
