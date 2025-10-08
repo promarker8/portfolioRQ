@@ -1,6 +1,6 @@
 [build]
   command = "ng build --configuration production"
-  publish = "dist/girl-portfolio/browser"
+  publish = "dist/portfolio-rq/browser"
 
 # SPA fallback
 [[redirects]]
