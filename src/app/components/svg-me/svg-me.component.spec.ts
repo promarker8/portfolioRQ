@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenerComponent } from './opener.component';
+import { SvgMeComponent } from './svg-me.component';
 
-describe('OpenerComponent', () => {
-  let component: OpenerComponent;
-  let fixture: ComponentFixture<OpenerComponent>;
+describe('SvgMeComponent', () => {
+  let component: SvgMeComponent;
+  let fixture: ComponentFixture<SvgMeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OpenerComponent]
+      imports: [SvgMeComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(OpenerComponent);
+    fixture = TestBed.createComponent(SvgMeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -40,7 +40,7 @@ export class AppComponent implements AfterViewInit {
         this.renderer.removeClass(document.body, 'theme-projects');
         this.renderer.removeClass(document.body, 'theme-about');
         this.renderer.removeClass(document.body, 'theme-contact');
-        this.renderer.removeClass(document.body, 'theme-opener');
+        this.renderer.removeClass(document.body, 'theme-svg-me');
 
         // Add theme class based on URL
         if (url === '/' || url.startsWith('/home')) {
@@ -51,8 +51,8 @@ export class AppComponent implements AfterViewInit {
           this.renderer.addClass(document.body, 'theme-about');
         } else if (url.startsWith('/contact')) {
           this.renderer.addClass(document.body, 'theme-contact');
-        } else if (url.startsWith('/opener')) {
-          this.renderer.addClass(document.body, 'theme-opener');
+        } else if (url.startsWith('/svg-me')) {
+          this.renderer.addClass(document.body, 'theme-svg-me');
         }
 
         if (isHome) {

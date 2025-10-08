@@ -14,12 +14,12 @@ import { CustomWiggle } from 'gsap/CustomWiggle';
 gsap.registerPlugin(CustomEase, CustomWiggle);
 
 @Component({
-  selector: 'app-opener',
-  templateUrl: './opener.component.html',
-  styleUrls: ['./opener.component.scss'],
+  selector: 'app-svg-me',
+  templateUrl: './svg-me.component.html',
+  styleUrls: ['./svg-me.component.scss'],
   standalone: true
 })
-export class OpenerComponent implements AfterViewInit, OnDestroy {
+export class SvgMeComponent implements AfterViewInit, OnDestroy {
   private xPosition = 0;
   private yPosition = 0;
   private storedXPosition = 0;
@@ -40,6 +40,7 @@ export class OpenerComponent implements AfterViewInit, OnDestroy {
 
     this.setupAnimations();
     this.setupBlink();
+    this.setupSmile();
     this.setupDizzy();
 
     // Setup resize listener
@@ -135,6 +136,16 @@ export class OpenerComponent implements AfterViewInit, OnDestroy {
       .to('.eye-right-2, .eye-left-2', { duration: 0.01, opacity: 1 }, 0)
       .to('.eye-right, .eye-left', { duration: 0.01, opacity: 1 }, 0.15)
       .to('.eye-right-2, .eye-left-2', { duration: 0.01, opacity: 0 }, 0.15);
+  }
+
+  private setupSmile() {
+    const smile = gsap.timeline({ repeat: -1, repeatDelay: 12 });
+
+    smile
+      .to('.mouth', { duration: 0.2, opacity: 0 }, 0)
+      .to('.mouth-smile', { duration: 0.2, opacity: 1 }, 0)
+      .to('.mouth-smile', { duration: 0.2, opacity: 0 }, 7)
+      .to('.mouth', { duration: 0.2, opacity: 1 }, 7);
   }
 
   private setupDizzy() {

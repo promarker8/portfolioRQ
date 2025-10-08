@@ -1,0 +1,50 @@
+<div class="container-fluid">
+
+    <!-- <div class="plane">
+        <img src="../../../assets/paper-plane-2.svg" alt="plane">
+    </div>
+
+    
+    <svg width="0" height="0">
+        <path id="planePath" d="M0,150 Q400,50 800,150 T1600,150" fill="transparent" stroke="none" />
+    </svg> -->
+
+    <svg width="100%" height="100%" viewBox="0 0 600 200">
+        <!-- Path with multiple ups and downs -->
+        <path id="planePath" d="M15 150
+        C 15 -200, 200 200, 250 30
+        S 400 200, 450 60
+        S 580 1, 580 120" fill="none" />
+        <!-- stroke="lightgray" stroke-width=".2" fill="none" stroke-dasharray="5,5" opacity="0.3" -->
+
+        <path id="planePathReturn" d="M580 120 
+        C 580 400, 450 10, 350 175 
+        S 100 1, 300 65 
+        S 15 320, 15 150" fill="none" />
+
+        <defs>
+            <!-- Define linear gradient for banner -->
+            <linearGradient id="bannerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#fde68a" />
+                <stop offset="100%" stop-color="#f5a432" />
+            </linearGradient>
+        </defs>
+
+        <g id="planeGroup" (click)="onPlaneClick()">
+            <g id="bannerGroup" *ngIf="showBanner" transform="translate(-35, 2)">
+                <rect x="0" y="10" width="30" height="8" fill="url(#bannerGradient)" rx="2" ry="2">
+                    <!-- Add a subtle waving/skew animation -->
+                    <animateTransform attributeName="transform" type="skewX" values="0;2;0;-2;0" dur="1.5s"
+                        repeatCount="indefinite" />
+                </rect>
+                <text x="2.2" y="15.2" font-size="3.5" fill="#333" font-family="sans-serif">LOOK AROUND
+                </text>
+            </g>
+
+            <!-- Plane image inside SVG -->
+            <image id="plane" href="../../../assets/paper-plane-tilted.svg" width="30" height="30" x="0" y="0" />
+        </g>
+    </svg>
+
+
+</div>

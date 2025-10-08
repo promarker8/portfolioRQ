@@ -48,9 +48,19 @@ html {
     z-index: -1;
     background:
         // (size of the gradient ellipse at centre point of the gradient (60% from the left, 70% from the top), then duh, transparent = accent color in the center to fully transparent at the edges)
-        radial-gradient(40vmax 50vmax at 20% 15%, color.adjust($blush, $alpha: -0.1), transparent), // vmax is 1% larger than viewport
-        radial-gradient(55vmax 25vmax at 75% 20%, color.adjust($accent, $alpha: -0.5), transparent),
-        radial-gradient(70vmax 60vmax at 65% 75%, color.adjust($accent, $alpha: -0.5), transparent);
+        // radial-gradient(40vmax 50vmax at 20% 15%, color.adjust($blush, $alpha: -0.1), transparent), // vmax is 1% larger than viewport
+        // radial-gradient(55vmax 25vmax at 75% 20%, color.adjust($accent, $alpha: -0.5), transparent),
+        // radial-gradient(70vmax 60vmax at 65% 75%, color.adjust($accent, $alpha: -0.5), transparent);
+        radial-gradient(40vmax 60vmax at 20% 15%, rgba(0, 22, 90, 0.32), transparent),
+        radial-gradient(55vmax 25vmax at 75% 20%, rgb(255 161 43), transparent),
+        radial-gradient(80vmax 40vmax at 65% 45%, rgb(195 0 49), #000000);
+}
+
+.theme-home .bg-blob {
+    background:
+        radial-gradient(40vmax 60vmax at 20% 15%, rgba(0, 22, 90, 0.32), transparent),
+        radial-gradient(55vmax 25vmax at 75% 20%, rgb(255 161 43), transparent),
+        radial-gradient(80vmax 40vmax at 65% 45%, rgb(195 0 49), #000000);
 }
 
 .theme-projects {
@@ -58,11 +68,16 @@ html {
 }
 
 .theme-projects .bg-blob {
+    // background:
+    //     radial-gradient(30vmax 35vmax at 20% 20%, color.adjust($dark-accent2, $alpha: -0.65), transparent),
+    //     radial-gradient(35vmax 25vmax at 80% 20%, color.adjust($dark-accent2, $alpha: -0.7), transparent),
+    //     radial-gradient(50vmax 30vmax at 65% 75%, color.adjust($dark-accent, $alpha: -0.6), transparent);
+    // filter: blur(40px) saturate(1.1);
     background:
-        radial-gradient(30vmax 35vmax at 20% 20%, color.adjust($dark-accent2, $alpha: -0.65), transparent),
-        radial-gradient(35vmax 25vmax at 80% 20%, color.adjust($dark-accent2, $alpha: -0.7), transparent),
-        radial-gradient(50vmax 30vmax at 65% 75%, color.adjust($dark-accent, $alpha: -0.6), transparent);
-    filter: blur(40px) saturate(1.1);
+        radial-gradient(30vmax 35vmax at 20% 20%, rgb(145 0 58 / 38%), #00000021),
+        radial-gradient(35vmax 25vmax at 80% 20%, rgb(1 10 114 / 57%), #00000012),
+        radial-gradient(50vmax 30vmax at 65% 75%, rgb(17 0 71 / 49%), #0000006b);
+    filter: blur(40px) saturate(1.5);
 }
 
 .theme-about {
@@ -89,11 +104,11 @@ html {
     filter: blur(40px) saturate(1.1);
 }
 
-.theme-opener {
+.theme-svg-me {
     background-color: #0a0a0a;
 }
 
-.theme-opener .bg-blob {
+.theme-svg-me .bg-blob {
     margin: 0;
     background-color: #0a0a0a;
     background-image:

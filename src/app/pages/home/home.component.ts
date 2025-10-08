@@ -2,12 +2,14 @@ import { Component, HostListener } from '@angular/core';
 import { Home3dEffectComponent } from "../../components/home3d-effect/home3d-effect.component";
 import { CommonModule } from '@angular/common';
 import TypeIt from 'typeit';
-import { OpenerComponent } from '../opener/opener.component';
+import { SvgMeComponent } from '../../components/svg-me/svg-me.component';
+import { PlaneComponent } from "../../components/plane/plane.component";
+import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Home3dEffectComponent, CommonModule, OpenerComponent],
+  imports: [Home3dEffectComponent, CommonModule, SvgMeComponent, PlaneComponent, ScrollRevealDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

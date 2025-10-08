@@ -1,0 +1,12 @@
+.container-fluid {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+#plane {
+    // transform: rotate(-12deg) !important;
+    transform-origin: center;
+    cursor: pointer;
+}
