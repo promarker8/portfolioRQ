@@ -86,9 +86,12 @@ html {
 
 .theme-about .bg-blob {
     background:
-        radial-gradient(30vmax 35vmax at 20% 20%, color.adjust($blush, $alpha: -0.5), transparent),
-        radial-gradient(35vmax 25vmax at 80% 20%, color.adjust($dark-accent, $alpha: -0.4), transparent),
-        radial-gradient(50vmax 30vmax at 65% 75%, color.adjust($accent, $alpha: -0.6), transparent);
+        // radial-gradient(30vmax 35vmax at 20% 20%, color.adjust($blush, $alpha: -0.5), transparent),
+        // radial-gradient(35vmax 25vmax at 80% 20%, color.adjust($dark-accent, $alpha: -0.4), transparent),
+        // radial-gradient(50vmax 30vmax at 65% 75%, color.adjust($accent, $alpha: -0.6), transparent);
+        radial-gradient(30vmax 35vmax at 20% 20%, rgb(255 91 121 / 47%), #00000005),
+        radial-gradient(35vmax 25vmax at 80% 20%, rgb(247 107 0 / 92%), transparent),
+        radial-gradient(50vmax 30vmax at 65% 75%, rgb(238 5 71 / 63%), transparent);
     filter: blur(40px) saturate(1.1);
 }
 
@@ -98,9 +101,12 @@ html {
 
 .theme-contact .bg-blob {
     background:
-        radial-gradient(30vmax 35vmax at 20% 20%, color.adjust($darkblue-accent, $alpha: -0.45), transparent),
-        radial-gradient(35vmax 25vmax at 80% 20%, color.adjust($blue-accent, $alpha: -0.3), transparent),
-        radial-gradient(50vmax 50vmax at 65% 75%, color.adjust($green-accent, $alpha: -0.45), transparent);
+        // radial-gradient(30vmax 35vmax at 20% 20%, color.adjust($darkblue-accent, $alpha: -0.45), transparent),
+        // radial-gradient(35vmax 25vmax at 80% 20%, color.adjust($blue-accent, $alpha: -0.3), transparent),
+        // radial-gradient(50vmax 50vmax at 65% 75%, color.adjust($green-accent, $alpha: -0.45), transparent);
+        radial-gradient(30vmax 35vmax at 20% 20%, rgba(0, 69, 147, 0.68), rgb(0 0 0 / 0%)),
+        radial-gradient(35vmax 25vmax at 80% 20%, rgb(130, 189, 255), rgb(0 0 0 / 0%)),
+        radial-gradient(50vmax 50vmax at 65% 75%, rgba(156, 217, 0, 0.81), rgb(0 0 0 / 12%));
     filter: blur(40px) saturate(1.1);
 }
 
